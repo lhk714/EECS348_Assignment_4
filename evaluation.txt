@@ -1,0 +1,19 @@
+File: evaluation.txt
+Author(s) names AND netid's: Haikun Liu    hlg483
+Date: 05.19.2016
+Statement: I worked individually on this project and all work is my own.
+
+Evaluation Table
++--------------+----------+-----------+--------+--------+
+|              | Accuracy | Precision | Recall | F1     |
++--------------+----------+-----------+--------+--------+
+| Bayes.py     | 84.93%   | 97.10%    | 84.11% | 90.14% |
++--------------+----------+-----------+--------+--------+
+| Bayesbest.py | 96.05%   | 96.05%    | 88.80% | 92.29% |
++--------------+----------+-----------+--------+--------+
+Notice: The figures in the table is with regard to positive class
+
+The Bayesbest.py performances batter than Bayes.py, because of the data preprocessing involved in tokenization stage. In Bayesbest.py, instead of conducting tokenization process as Bayes.py, the input string is firstly converted into lower-case. Then, punctuations are removed from the string, followed by tokenization. After that, the neutral words are deleted from word list based on nltk.corpus.stopwords.words('english’). Finally, the stemming is performed to the refined word list using nltk.stem.porter.PorterStemmer. 
+
+Todo:
+There is a unbalancing problem in data set, where the information from positive class overwhelming negative class. As the result, the performance of negative class is unsatisfied. In order to solve it, we could use complementary bayes network instead or involve boosting to the naive bayes model.
